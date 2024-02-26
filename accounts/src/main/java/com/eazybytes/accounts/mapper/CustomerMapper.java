@@ -18,4 +18,5 @@ public class CustomerMapper {
         customer.setMobileNumber(customerDto.getMobileNumber());
         return customer;
     }
+
 }
