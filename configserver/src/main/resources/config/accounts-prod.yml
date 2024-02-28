@@ -1,0 +1,11 @@
+build:
+  version: 1.0
+
+accounts:
+  message: "Welcome to eazybank PROD api"
+  contactDetails:
+    name: "Murat Yayla PROD"
+    email: "murat_prod@eazybank.com"
+  onCallSupport:
+    - (777) 551 12 22
+    - (777) 123 44 55

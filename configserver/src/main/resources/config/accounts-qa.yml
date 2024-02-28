@@ -1,0 +1,17 @@
+#without cloud config
+#spring:
+#  config:
+#    activate:
+#      on-profile: qa
+
+build:
+  version: 2.0
+
+accounts:
+  message: "Welcome to eazybank QA api"
+  contactDetails:
+    name: "Murat Yayla QA"
+    email: "murat_qa@eazybank.com"
+  onCallSupport:
+    - (666) 551 12 22
+    - (666) 123 44 55
