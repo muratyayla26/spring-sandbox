@@ -2,26 +2,20 @@ spring:
   application:
     name: "configserver"
   profiles:
+    # active: native
     active: git
-    #active: native
   cloud:
     config:
       server:
+        # native:
+          # search-locations: "classpath:/config"
+          # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
-          uri: "https://github.com/muratyayla26/eazybytes-config"
+          uri: "https://github.com/eazybytes/eazybytes-config.git"
           default-label: main
           timeout: 5
-          force-pull: true
           clone-on-start: true
-          #native:
-          #search-locations: "file:///Users//muratyayla//IdeaProjects//udemy//config-cloud-file"
-          #search-locations: "classpath:/config"
-  # removed for time saving during learning also spring-cloud-starter-bus-amqp dependency removed
-  #rabbitmq:
-   # host: "localhost"
-   # port: 5672
-   # username: "guest"
-   # password: "guest"
+          force-pull: true
 
 management:
   endpoints:

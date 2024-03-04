@@ -13,7 +13,6 @@ public interface AccountsRepository extends JpaRepository<Accounts, Long> {
 
     Optional<Accounts> findByCustomerId(Long customerId);
 
-    // todo transactional serviste yapsak? modifiying optional?
     @Transactional
     @Modifying
     void deleteByCustomerId(Long customerId);

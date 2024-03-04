@@ -38,6 +38,10 @@ public class AccountsController {
 
     private final IAccountsService iAccountsService;
 
+    public AccountsController(IAccountsService iAccountsService) {
+        this.iAccountsService = iAccountsService;
+    }
+
     @Value("${build.version}")
     private String buildVersion;
 
@@ -46,10 +50,6 @@ public class AccountsController {
 
     @Autowired
     private AccountsContactInfoDto accountsContactInfoDto;
-
-    public AccountsController(IAccountsService iAccountsService) {
-        this.iAccountsService = iAccountsService;
-    }
 
     @Operation(
             summary = "Create Account REST API",
@@ -178,8 +178,8 @@ public class AccountsController {
     }
 
     @Operation(
-            summary = "Fetch build version",
-            description = "Fetch build version of current deployment"
+            summary = "Get Build information",
+            description = "Get Build information that is deployed into accounts microservice"
     )
     @ApiResponses({
             @ApiResponse(
@@ -197,13 +197,14 @@ public class AccountsController {
     )
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildInfo() {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(buildVersion);
+        return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(buildVersion);
     }
 
     @Operation(
-            summary = "Fetch Java version",
-            description = "Fetch Java version of current deployment"
+            summary = "Get Java version",
+            description = "Get Java versions details that is installed into accounts microservice"
     )
     @ApiResponses({
             @ApiResponse(
@@ -221,14 +222,14 @@ public class AccountsController {
     )
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity
+                .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
     }
 
-
     @Operation(
-            summary = "Fetch contact info",
-            description = "Fetch contact info of current deployment"
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
     )
     @ApiResponses({
             @ApiResponse(
@@ -246,8 +247,10 @@ public class AccountsController {
     )
     @GetMapping("/contact-info")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity
+                .status(HttpStatus.OK)
                 .body(accountsContactInfoDto);
     }
+
 
 }

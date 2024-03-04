@@ -1,7 +1,6 @@
 package com.eazybytes.accounts.exception;
 
 import com.eazybytes.accounts.dto.ErrorResponseDto;
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -34,26 +33,6 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
             validationErrors.put(fieldName, validationMsg);
         });
         return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<Object> handleConstraintViolation(ConstraintViolationException ex, WebRequest webRequest) {
-        List<Map<String,String>> errors = ex.getConstraintViolations().stream()
-                .map(constraintViolation -> {
-                    Map<String, String> errMap = new HashMap<>();
-                    errMap.put(constraintViolation.getPropertyPath().toString(),
-                            constraintViolation.getMessage());
-                    return errMap;
-                }).toList();
-
-        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
-                webRequest.getDescription(false),
-                HttpStatus.BAD_REQUEST,
-                errors.toString(),
-                LocalDateTime.now()
-        );
-
-        return new ResponseEntity<>(errorResponseDTO, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
