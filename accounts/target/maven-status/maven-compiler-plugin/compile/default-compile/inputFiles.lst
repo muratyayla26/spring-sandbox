@@ -8,6 +8,7 @@
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/dto/AccountsDto.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/mapper/CustomerMapper.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/service/client/CardsFeignClient.java
+/Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/service/client/CardsFallback.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/service/client/LoansFeignClient.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/dto/AccountsContactInfoDto.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/constants/AccountsConstants.java
@@ -24,6 +25,7 @@
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/entity/BaseEntity.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/service/impl/CustomerServiceImpl.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/dto/LoansDto.java
+/Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/service/client/LoansFallback.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/controller/CustomerController.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/repository/CustomerRepository.java
 /Users/muratyayla/IdeaProjects/udemy/microservices/accounts/src/main/java/com/eazybytes/accounts/dto/CustomerDetailsDto.java
